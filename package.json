@@ -4,11 +4,11 @@
   "main": "index.js",
   "license": "MIT",
   "scripts": {
-    "start:dev": "nodemon src/index.js --exec babel-node --presets babel-preset-env",
-    "clean": "rm -rf build && mkdir build",
-    "build-babel": "babel src --out-dir build",
-    "build": "yarn clean && yarn build-babel",
-    "start": "NODE_ENV='production' yarn build && node ./build/index.js"
+    "dev": "nodemon -w src --exec babel-node --presets babel-preset-env",
+    "clean": "rm -rf dist",
+    "build": "babel src -s -D -d dist --presets babel-preset-env",
+    "setup": "yarn clean && yarn build",
+    "start": "node dist"
   },
   "dependencies": {
     "body-parser": "^1.19.0",

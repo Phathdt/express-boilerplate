@@ -3,8 +3,6 @@ import cors from 'cors'
 import bodyParser from 'body-parser'
 import morgan from 'morgan'
 import 'dotenv/config'
-import 'babel-core/register'
-import 'babel-polyfill'
 
 const app = express()
 
