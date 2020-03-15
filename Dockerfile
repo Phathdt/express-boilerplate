@@ -6,7 +6,7 @@ WORKDIR /usr/src/app
 
 COPY . .
 
-RUN yarn install
+RUN yarn install --only=production
 
 EXPOSE 5000
 
