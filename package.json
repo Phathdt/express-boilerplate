@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "nodemon -w src --exec babel-node src/index.js",
     "clean": "rm -rf dist",
-    "build": "yarn babel src -s -D -d dist --presets @babel/preset-env",
+    "build": "babel src -d dist --presets @babel/preset-env",
     "setup": "yarn clean && yarn build",
     "start": "node dist"
   },
