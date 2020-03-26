@@ -4,6 +4,7 @@ import bodyParser from 'body-parser'
 import 'dotenv/config'
 import { morganSuccess, morganError } from './middleware/morgan'
 import { addRequestId } from './middleware/requestid'
+import routes from './routes/api'
 
 const app = express()
 
@@ -22,6 +23,8 @@ app.use(
 app.get('/ping', (req, res) => {
   res.json({ msg: 'pong' })
 })
+
+app.use('/api', routes)
 
 const port = process.env.PORT || 5000
 
