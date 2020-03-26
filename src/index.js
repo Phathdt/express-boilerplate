@@ -2,8 +2,7 @@ import express from 'express'
 import cors from 'cors'
 import bodyParser from 'body-parser'
 import 'dotenv/config'
-import { morganSuccess, morganError } from './middleware/morgan'
-import { addRequestId } from './middleware/requestid'
+import { morganSuccess, morganError, addRequestId } from './middleware'
 import routes from './routes/api'
 
 const app = express()
@@ -20,7 +19,7 @@ app.use(
   })
 )
 
-app.get('/ping', (req, res) => {
+app.get('/ping', (_, res) => {
   res.json({ msg: 'pong' })
 })
 
