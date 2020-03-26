@@ -6,7 +6,8 @@
       {
         "root": ["./src"],
         "alias": {
-          "@module": "./src/module"
+          "@module": "./src/module",
+          "@usrMdl": "./src/module/user"
         }
       }
     ]

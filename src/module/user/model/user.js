@@ -1,9 +1,9 @@
 export default class {
   constructor() {
-    console.log('User constructer')
+    console.log('User constructor')
   }
 
   work() {
-    console.log('work')
+    console.log('work work work')
   }
 }
