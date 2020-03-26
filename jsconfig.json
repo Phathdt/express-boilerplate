@@ -2,8 +2,7 @@
   "compilerOptions": {
     "baseUrl": ".",
     "paths": {
-      "@module/*": ["src/module/*"],
-      "@usrMdl/*": ["src/module/user/*"]
+      "@module/*": ["src/module/*"]
     }
   }
 }
