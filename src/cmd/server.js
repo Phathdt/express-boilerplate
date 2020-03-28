@@ -25,4 +25,27 @@ server.get('/ping', (_, res) => {
 
 server.use('/api', routes)
 
+server.use((err, req, res, next) => {
+  if (err) {
+    console.error(err.message)
+
+    if (!err.statusCode) {
+      err.statusCode = 500
+    }
+
+    return res.status(err.statusCode).send({
+      statusCode: err.statusCode,
+      msg: err.message,
+    })
+  }
+
+  next()
+})
+
+server.use(function(req, res) {
+  res.status(404).json({
+    msg: 'Page does not exist',
+  })
+})
+
 export default server
