@@ -1,9 +1,11 @@
-export default class {
-  constructor() {
-    console.log('User constructor')
-  }
+import mongoose from 'mongoose'
 
-  work() {
-    console.log('work work work')
-  }
-}
+let userSchema = new mongoose.Schema({
+  email: String,
+  first_name: String,
+  last_name: String,
+})
+
+let User = mongoose.model('users', userSchema)
+
+export { User }
