@@ -1,7 +1,6 @@
 import express from 'express'
 import cors from 'cors'
 import bodyParser from 'body-parser'
-import 'dotenv/config'
 import { morganSuccess, morganError, addRequestId } from '@root/middleware'
 import routes from '@root/routes/api'
 
@@ -48,4 +47,17 @@ server.use(function(req, res) {
   })
 })
 
-export default server
+const startServer = async () => {
+  try {
+    const port = process.env.PORT || 5000
+
+    server.listen(port, () => console.log(`Server started on port ${port}`))
+  } catch (err) {
+    console.error(err)
+
+    process.exit(1)
+    return
+  }
+}
+
+export { startServer }
