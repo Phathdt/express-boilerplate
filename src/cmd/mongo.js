@@ -8,6 +8,10 @@ const startMongo = async () => {
     useCreateIndex: true,
   })
 
+  let env = process.env.NODE_ENV || 'development'
+  let debug = env == 'development' ? true : false
+  mongoose.set('debug', debug)
+
   const db = mongoose.connection
 
   db.on('error', console.error.bind(console, 'connection error:'))
