@@ -1,15 +1,5 @@
 import { User } from '../model'
 
-const getAll = async () => {
-  try {
-    let users = await User.find()
-
-    return { users }
-  } catch (err) {
-    return { err }
-  }
-}
-
 const create = async ({ email, first_name, last_name }) => {
   let user = new User({ email, first_name, last_name })
 
@@ -22,4 +12,4 @@ const create = async ({ email, first_name, last_name }) => {
   }
 }
 
-export default { getAll, create }
+export { create }
