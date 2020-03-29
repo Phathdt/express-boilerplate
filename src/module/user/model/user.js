@@ -1,7 +1,7 @@
 import mongoose from 'mongoose'
 
 let userSchema = new mongoose.Schema({
-  email: String,
+  email: { type: String, unique: true },
   first_name: String,
   last_name: String,
 })

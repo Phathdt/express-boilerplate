@@ -1,3 +1,4 @@
 import { create } from './create'
+import { findByEmail } from './find'
 
-export default { create }
+export default { create, findByEmail }

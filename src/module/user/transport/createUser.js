@@ -6,7 +6,7 @@ export default async ({ body }, res, next) => {
   let { user, err } = await hdl.createUser({ email, first_name, last_name })
 
   if (err) {
-    res.json({ msg: err })
+    res.json({ msg: err.message })
   } else {
     res.json({ msg: user })
   }
