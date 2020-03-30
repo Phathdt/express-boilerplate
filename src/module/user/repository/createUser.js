@@ -1,7 +1,7 @@
 import storage from '../storage'
 
 const create = async body => {
-  let { isExist, _ } = await storage.findByEmail(body.email)
+  let { isExist } = await storage.findByEmail(body.email)
 
   if (isExist) {
     let err = Error('Exist user')
