@@ -1,5 +1,10 @@
 import { Router } from 'express'
-import { createUser, listUser, findUser } from '@module/user/transport'
+import {
+  createUser,
+  listUser,
+  findUser,
+  updateUser,
+} from '@module/user/transport'
 
 const userRoute = Router()
 
@@ -13,6 +18,10 @@ userRoute.post('/', (req, res) => {
 
 userRoute.get('/:id', (req, res) => {
   findUser(req, res)
+})
+
+userRoute.put('/:id', (req, res) => {
+  updateUser(req, res)
 })
 
 export default userRoute
