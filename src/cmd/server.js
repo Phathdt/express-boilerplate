@@ -3,6 +3,7 @@ import cors from 'cors'
 import bodyParser from 'body-parser'
 import { morganSuccess, morganError, addRequestId } from '@root/middleware'
 import routes from '@root/routes/api'
+import { sampleQueue } from '../queue'
 
 const server = express()
 
@@ -19,6 +20,17 @@ server.use(
 )
 
 server.get('/ping', (_, res) => {
+  const data = {
+    email: 'foo@bar.com',
+  }
+
+  const options = {
+    delay: 1000,
+    attempts: 3,
+  }
+
+  sampleQueue.add(data, options)
+
   res.json({ msg: 'pong' })
 })
 
